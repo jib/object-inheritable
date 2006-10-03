@@ -1,0 +1,44 @@
+This is the README file for Object::Inheritable, a module that allows per 
+object Inheritables.
+
+Please refer to 'perldoc Object::Inheritable' after installation for 
+details.
+
+#####################################################################
+
+* Description
+
+Object::Inheritable
+
+    Object::Inheritable lets you inherit data between objects that use
+    Object::Inheritable as a baseclass (or other objects that implement
+    a similar API), by defining a relationship between these objects. 
+    
+    This works analogous to C<perl>s own @ISA resolving, but rather 
+    than on classes, it works on objects.
+
+    
+#####################################################################
+
+* Installation
+
+Object::Inheritable follows the standard perl module install process
+
+perl Makefile.PL
+make
+make test
+make install
+
+The module uses no C or XS parts, so no c-compiler is required.
+
+######################################################################
+
+AUTHOR
+    This module by Jos Boumans <kane@cpan.org>.
+
+COPYRIGHT
+    This module is copyright (c) 2006 Jos Boumans <kane@cpan.org>. All
+    rights reserved.
+
+    This library is free software; you may redistribute and/or modify it
+    under the same terms as Perl itself.
