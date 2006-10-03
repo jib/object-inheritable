@@ -21,20 +21,16 @@ Object::Inheritable -- Mixin class to enable data inheritance between objects
     $child  = My::Class->new;       
     $parent = My::Parent->new;
 
-    $child->parent( $parent );      # define the relationship
+    ### define the relationship, My::Class needs to define this accessor.
+    ### For custom accessors, see 'ALTERNATE PARENT METHODS' section.
+    $child->parent( $parent );       
 
-    $parent->parent_method( $$ );   # set the value in the parent
-    $child->child_method(   $$ );   # set the value in the child;
+    ### returns all objects in the inheritance chain; $child and $parent;                                    
+    @list = $chlid->list_objects;    
 
-    print $child->parent_method;    # print it from the child
-    print $parent->child_method;    # error; no such method for parent
-
-    $parent->shared_method( 'p' );  # set the value in the parent
-    $child->shared_method(  'c' );  # set another value in the child
-
-    print $parent->shared_method;   # prints 'p'
-    print $child->shared_method;    # prints 'c'
-
+    ### returns the object you should call 'some_method' on, according
+    ### to your inheritance chain
+    $obj  = $child->object_for('some_method'); 
 
 =head1 DESCRIPTION
 
